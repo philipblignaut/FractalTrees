@@ -140,7 +140,7 @@ namespace FractalTrees
 				ConDeb.Print(point.ToString());
 				image.BottomCartesian();
 				point = image.Graphics.RenderingOrigin;
-				image.Graphics.FillRectangle(new SolidBrush(Color.Black), 100, 100, 10, 10);
+				image.Graphics.DrawRectangle(new Pen(Color.Black,20), -1000, 0, 2000, 2000);
 				ConDeb.Print(point.ToString());
 				PosVector trunk =
 					new PosVector
@@ -149,6 +149,7 @@ namespace FractalTrees
 					, 90F.ToRadians()
 					)
 					;
+				ConDeb.Print($"{trunk.Start} {trunk.End}");
 				DrawBranch
 					(image
 					, trunk
